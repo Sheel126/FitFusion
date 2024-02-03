@@ -21,7 +21,7 @@ const UserPage = () => {
                 }}
                 align="center">
 
-                <Avatar alt="Fit Fusion Logo" src="/logo.jpg" sx={{ width: 56, height: 56 }}/>
+                <Avatar alt="Fit Fusion Logo" src="/images/app_logo.png" sx={{ width: 56, height: 56 }}/>
                 <Typography component="h1" variant="h2">User Info</Typography>
 
                 <Box component="form" sx={{ mt: 4 }}>

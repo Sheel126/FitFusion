@@ -1,14 +1,13 @@
 // components/FitnessBox.js
 import { Box, Typography } from '@mui/material';
 
-const FitnessBox = ({ totalCalories, calories }) => {
-    const consumedCalories = (100 - ((calories / totalCalories) * 100)) + '%';
-
+const WaterBox = ({ totalWater, consumedWater }) => {
+    const usedconsumedWater = (((totalWater / consumedWater) * 100) - 100) + '%';
   return (
     <Box>
         <Box sx={{
         height: '30vh',
-        bgcolor: 'salmon',
+        bgcolor: 'aqua',
         borderRadius: '8px',
         width: '12vw',
         display: 'flex',
@@ -17,8 +16,7 @@ const FitnessBox = ({ totalCalories, calories }) => {
         <Box
             sx={{
                 width: '12vw',
-                height: consumedCalories,
-                maxHeight: '100%',
+                height: usedconsumedWater,
                 borderTopLeftRadius: '8px',
                 borderTopRightRadius: '8px',
                 bgcolor: 'background.paper',
@@ -33,8 +31,8 @@ const FitnessBox = ({ totalCalories, calories }) => {
         </Box>
     </Box>
         <Typography variant="body">
-            <p>{calories} / {totalCalories} Calories consumed!</p>
-            <p>{totalCalories - calories} calories to go</p>
+            <p>{consumedWater} / {totalWater} cups of water drank!</p>
+            <p>{totalWater - consumedWater} cups to go</p>
         
         </Typography>
     </Box>
@@ -42,4 +40,4 @@ const FitnessBox = ({ totalCalories, calories }) => {
   );
 };
 
-export default FitnessBox;
+export default WaterBox;

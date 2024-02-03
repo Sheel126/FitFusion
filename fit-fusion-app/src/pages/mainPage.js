@@ -9,9 +9,6 @@ import React from 'react';
 export default function mainPage() {
     return (
         <>
-
-
-
           <NavBar />
           <TwoColumnsLayout
             leftColumn={<Box

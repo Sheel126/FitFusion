@@ -1,31 +1,40 @@
 // components/FitnessBox.js
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 
 const FitnessBox = ({ totalCalories, calories }) => {
-  // Define the size based on calories. This is a basic example, adjust the formula as needed.
-  const size = totalCalories /calories;
-
+    const usedCalories = (totalCalories / calories) + '%';
   return (
-    <Box sx={{
-        height: totalCalories,
-        width: 
+    <Box>
+        <Box sx={{
+        height: '30vh',
+        bgcolor: 'salmon',
+        borderRadius: '8px',
+        width: '12vw',
+        display: 'flex',
+        position: 'relative' // Position set to relative
     }}>
         <Box
             sx={{
-                width: 15%,
-                height: size,
+                width: '12vw',
+                height: usedCalories,
+                borderTopLeftRadius: '8px',
+                borderTopRightRadius: '8px',
                 bgcolor: 'background.paper',
-                border: 1,
-                borderColor: 'primary.main',
-                display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                m: 2,
+                position: 'absolute', // Position set to absolute
+                top: 0, // Align to the top of the parent box
+                left: 0,
+                // m: 2,
             }}
             >
-            <Typography variant="body1">{calories} Calories</Typography>
         </Box>
+    </Box>
+        <Typography variant="body">
+            <p>{calories} / {totalCalories} Calories!</p>
+            <p>{totalCalories - calories} calories to go</p>
+        
+        </Typography>
     </Box>
     
   );

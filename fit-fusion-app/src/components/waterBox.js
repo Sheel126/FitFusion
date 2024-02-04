@@ -2,7 +2,7 @@
 import { Box, Typography } from '@mui/material';
 
 const WaterBox = ({ totalWater, consumedWater }) => {
-    const usedconsumedWater = (((totalWater / consumedWater) * 100) - 100) + '%';
+    const usedconsumedWater = (100 - ((consumedWater / totalWater) * 100)) + '%';
   
   return (
     <Box>
@@ -44,8 +44,8 @@ const WaterBox = ({ totalWater, consumedWater }) => {
         </Box>
        </Box>
         <Typography variant="body">
-            <p>{consumedWater} / {totalWater} Calories consumed!</p>
-            <p>{totalWater - consumedWater} calories to go</p>
+            <p>{consumedWater} / {totalWater} cups of water drank!</p>
+            <p>{totalWater - consumedWater} cups to go</p>
         
         </Typography>
     </Box>

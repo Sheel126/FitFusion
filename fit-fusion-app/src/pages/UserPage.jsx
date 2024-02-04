@@ -9,9 +9,12 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import NavBar from '@/components/NavBar';
 
 const UserPage = () => {
     return (
+        <>
+        <NavBar />
         <Container component="main" maxwidth="xs">
             <Box sx={{
                     marginTop: 8,
@@ -95,6 +98,7 @@ const UserPage = () => {
                 </Box>
             </Box>
         </Container>
+        </>
     )
 }
 

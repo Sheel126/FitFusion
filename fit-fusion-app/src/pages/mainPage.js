@@ -31,7 +31,7 @@ export default function mainPage() {
                 alignItems: 'top',
                 height: '40vh', 
                 margin: '10px'}}>
-                  <FitnessBox calories={2500} totalCalories={2500}/>
+                  <FitnessBox calories={2000} totalCalories={2500}/>
               </Box>
               <Box sx={{
                 display: 'flex',
@@ -39,7 +39,7 @@ export default function mainPage() {
                 alignItems: 'top',
                 height: '40vh', 
                 margin: '10px'}}>
-                  <WaterBox totalWater={2500} consumedWater={2500}/>
+                  <WaterBox totalWater={2500} consumedWater={200}/>
               </Box>
 
             

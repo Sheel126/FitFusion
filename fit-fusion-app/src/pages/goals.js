@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 //Importing the CSS module (I will create later)
 import styles from './goals.module.css';
+import { useRouter } from 'next/router';
 
 // Golas page component 
 const Goals = () => {
@@ -13,7 +14,9 @@ const Goals = () => {
         'Gym 3 times a week',
         'Eat 5 servings of fruits and vegetables daily'
     ]);
-
+    const router = useRouter();
+    const { user } = router.query;
+    const userObj = user ? JSON.parse(user) : null;
     return (
         <>
             <Head>

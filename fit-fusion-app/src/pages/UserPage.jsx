@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,8 +11,49 @@ import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import NavBar from '@/components/NavBar';
+import { useRouter } from 'next/router';
 
 const UserPage = () => {
+    const [nameValue, setNameValue] = useState('');
+    const [heightValue, setHeightValue] = useState('');
+    const [weightValue, setWeightValue] = useState('');
+    const [genderValue, setGenderValue] = useState('');
+    const user = {
+        name: nameValue,
+        height: heightValue,
+        weight: weightValue,
+        gender: genderValue
+    }
+    const router = useRouter();
+
+    const handleInputClick = () => {
+        
+        router.push({
+            pathname: '/goals',
+            query: { user: JSON.stringify(user) },
+        });
+    };
+
+
+    const handleInputChange = (event) => {
+        setNameValue(event.target.value);
+        //console.log(event);
+        
+    };
+
+    const handleInputChange1 = (event) => {
+        setHeightValue(event.target.value);
+        
+    };
+
+    const handleInputChange2 = (event) => {
+        setWeightValue(event.target.value);
+    };
+
+    const handleInputChange3 = (event) => {
+        setGenderValue(event.target.value);
+    };
+
     return (
         <>
         <NavBar />
@@ -36,8 +78,11 @@ const UserPage = () => {
                                     fullWidth
                                     id="name"
                                     label="Name"
-                                    name="name"
+                                    name="name" 
                                     autoComplete="Name"
+                                    
+                                    onChange={handleInputChange}
+                                    placeholder='Name'
                                 />
                             </Box>
                         </Grid>
@@ -46,10 +91,14 @@ const UserPage = () => {
                                 <TextField
                                     required
                                     fullWidth
+                                    type='number'
                                     id="height"
                                     label="Height"
                                     name="height"
                                     autoComplete="Height"
+                                    
+                                    onChange={handleInputChange1}
+                                    placeholder='Height in inches'
                                 />
                             </Box>
                         </Grid>
@@ -58,10 +107,14 @@ const UserPage = () => {
                                 <TextField
                                     required
                                     fullWidth
+                                    type='number'
                                     id="weight"
                                     label="Weight"
                                     name="weight"
                                     autoComplete="Weight"
+                                    placeholder='Weight in lbs'
+                                    
+                                    onChange={handleInputChange2}
                                 />
                             </Box>
                         </Grid>
@@ -78,6 +131,7 @@ const UserPage = () => {
                                     row
                                     aria-labelledby="row-radio-buttons-group-label"
                                     name="row-radio-buttons-group"
+                                    onChange={handleInputChange3}
                                 >
                                     <FormControlLabel value="Male" control={<Radio />} label="Male" />
                                     <FormControlLabel value="Female" control={<Radio />} label="Female" />
@@ -87,9 +141,10 @@ const UserPage = () => {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Button
-                                type="submit"
+                               
                                 fullWidth 
                                 variant="contained"
+                                onClick={handleInputClick}
                             >
                                 Confirm
                             </Button>

@@ -1,30 +1,89 @@
-.goalsContainer {
-    padding: 20px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-}
-
-.title {
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* or any font-family you prefer */
+  }
+  
+  .goalsForm {
+    width: 100%;
+    max-width: 400px; /* Adjust based on your preference */
+    background: #ffffff; /* A white background for better contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly larger shadow for depth */
+    margin-top: 20px;
+  }
+  
+  .formLabel {
+    display: block;
+    margin-top: 20px; /* Increased spacing at the top for better visual separation */
+    font-weight: bold;
     color: #333;
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-    text-align: center;
-}
-
-.goalItem {
-    background-color: #fff;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.goalItem:hover {
-    transform: translateY(-3px);
-}
+    font-size: 16px; /* Larger font size for readability */
+  }
+  
+  .rangeInput {
+    -webkit-appearance: none;
+    width: calc(100% - 30px); /* Reduced width for thumb clearance */
+    height: 15px; /* Thicker track for better visibility */
+    border-radius: 8px; /* Rounded corners for the track */
+    background: #e6e6e6; /* A lighter track background */
+    outline: none;
+    margin-top: 10px; /* Spacing above the slider */
+    margin-bottom: 20px; /* Increased space between sliders */
+  }
+  
+  .rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px; /* Larger thumb for easier control */
+    height: 25px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 2px #0056b3; /* Subtle shadow for the thumb */
+  }
+  
+  .rangeInput::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 2px #0056b3;
+  }
+  
+  .rangeInput::-webkit-slider-runnable-track {
+    height: 15px; /* Align track height with thumb height */
+    border-radius: 8px;
+  }
+  
+  .rangeInput::-moz-range-track {
+    height: 15px;
+    border-radius: 8px;
+  }
+  
+  .rangeInput:focus {
+    background: #cccccc; /* Slightly darker track on focus for visual feedback */
+  }
+  
+  .submitButton {
+    display: block;
+    width: 100%;
+    padding: 12px 0; /* More vertical padding for a larger button */
+    background-color: #28a745; /* A 'success' green color for the action button */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Match the border-radius to other elements */
+    cursor: pointer;
+    font-size: 18px; /* Larger font size for better clickability */
+    font-weight: bold; /* Bold font weight for the button text */
+    margin-top: 30px; /* More space above the button */
+  }
+  
+  .submitButton:hover {
+    background-color: #218838; /* A darker green on hover for interactivity */
+  }
